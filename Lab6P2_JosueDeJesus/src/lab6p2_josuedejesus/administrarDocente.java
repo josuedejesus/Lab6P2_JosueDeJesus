@@ -85,7 +85,7 @@ public class administrarDocente {
                 sc = new Scanner(archivo);
                 sc.useDelimiter(";");
                 while (sc.hasNext()) {
-                    listaDocentes.add(new Docente(sc.next(), sc.next(), sc.nextInt(), sc.next(), sc.next(), sc.next(), sc.next(), sc.nextInt(), sc.next()
+                    listaDocentes.add(new Docente(sc.next(), sc.next(), sc.next(), sc.next(), sc.nextInt(), sc.next(), sc.next(), sc.nextInt(), sc.next()
                     )
                     );
                 }

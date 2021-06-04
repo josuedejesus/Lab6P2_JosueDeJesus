@@ -1,1 +1,1 @@
-asdas;asdas;josuemann;1998;1001;sdfsd;sdfsd;5;Salud;
+Josue;De Jesus;josuemann;1234;1001;Ingeniero en Sistemas;Ingeniero;5;Ingenieria;Marvin;Serrano;merwin;merwin;1002;Ingeniero Industrial;Ingeniero;2;Ingenieria;

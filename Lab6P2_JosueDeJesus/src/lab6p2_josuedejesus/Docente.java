@@ -18,7 +18,7 @@ public class Docente extends Persona{
         super();
     }
 
-    public Docente(String tituloUniversitario, String tituloPostgrado, int vecesImpartidas, String nombre, String apellido, String usuario, String contrasena, int numeroRegistro, String facultad) {
+    public Docente(String nombre, String apellido, String usuario, String contrasena, int numeroRegistro, String tituloUniversitario, String tituloPostgrado, int vecesImpartidas, String facultad) {
         super(nombre, apellido, usuario, contrasena, numeroRegistro, facultad);
         this.tituloUniversitario = tituloUniversitario;
         this.tituloPostgrado = tituloPostgrado;
@@ -51,7 +51,7 @@ public class Docente extends Persona{
 
     @Override
     public String toString() {
-        return "Docente{" + "tituloUniversitario=" + tituloUniversitario + ", tituloPostgrado=" + tituloPostgrado + ", vecesImpartidas=" + vecesImpartidas + '}';
+        return super.toString() + "Docente{" + "tituloUniversitario=" + tituloUniversitario + ", tituloPostgrado=" + tituloPostgrado + ", vecesImpartidas=" + vecesImpartidas + '}';
     }
     
     
