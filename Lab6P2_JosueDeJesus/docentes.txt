@@ -1,1 +1,1 @@
-Josue;De Jesus;josuemann;1234;1001;Ingeniero en Sistemas;Ingeniero;5;Ingenieria;Marvin;Serrano;merwin;merwin;1002;Ingeniero Industrial;Ingeniero;2;Ingenieria;
+JOsue;de jesus;josuemann;1234;1001;ing;ing;5;Ingenieria

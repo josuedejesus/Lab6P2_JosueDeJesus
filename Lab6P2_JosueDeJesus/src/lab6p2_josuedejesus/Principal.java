@@ -33,14 +33,13 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jd_menu = new javax.swing.JDialog();
-        jButton6 = new javax.swing.JButton();
         tipoTxt = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         butt_docentes = new javax.swing.JMenuItem();
         butt_alumnos = new javax.swing.JMenuItem();
         butt_clases = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jd_docentes = new javax.swing.JDialog();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -98,6 +97,10 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         listaDocentesMod = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        listaDocentesDel = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jMenu3 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -105,14 +108,7 @@ public class Principal extends javax.swing.JFrame {
         loginPass = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-
-        jButton6.setText("Salir");
-        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton6MouseClicked(evt);
-            }
-        });
+        jButton5 = new javax.swing.JButton();
 
         jMenu1.setText("Opciones");
 
@@ -130,8 +126,13 @@ public class Principal extends javax.swing.JFrame {
         butt_clases.setText("Clases");
         jMenu1.add(butt_clases);
 
-        jMenu4.setText("Salir");
-        jMenu1.add(jMenu4);
+        jMenuItem1.setText("Cerrar Sesion");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
 
@@ -145,23 +146,16 @@ public class Principal extends javax.swing.JFrame {
         jd_menuLayout.setHorizontalGroup(
             jd_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_menuLayout.createSequentialGroup()
-                .addGroup(jd_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_menuLayout.createSequentialGroup()
-                        .addGap(773, 773, 773)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jd_menuLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(tipoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(359, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(tipoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1053, Short.MAX_VALUE))
         );
         jd_menuLayout.setVerticalGroup(
             jd_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_menuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(tipoTxt)
-                .addGap(559, 559, 559)
-                .addComponent(jButton6)
-                .addContainerGap(283, Short.MAX_VALUE))
+                .addContainerGap(867, Short.MAX_VALUE))
         );
 
         nombreTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -584,15 +578,65 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Modificar", jPanel5);
 
+        listaDocentesDel.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        listaDocentesDel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaDocentesDelMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(listaDocentesDel);
+
+        jButton3.setText("Refrescar");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+
+        jButton4.setText("Eliminar");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1171, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jButton3)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(524, 524, 524)
+                .addComponent(jButton4)
+                .addContainerGap(577, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 856, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addGap(30, 30, 30)
+                .addComponent(jButton4)
+                .addContainerGap(445, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Eliminar", jPanel6);
@@ -628,10 +672,10 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel3.setText("Contraseña");
 
-        jButton1.setText("Ingresar");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton5.setText("Ingresar");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                jButton5MouseClicked(evt);
             }
         });
 
@@ -642,7 +686,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(115, 115, 115)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
+                    .addComponent(jButton5)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -668,7 +712,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(loginPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(jButton5)
                 .addContainerGap(165, Short.MAX_VALUE))
         );
 
@@ -691,63 +735,6 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
-        boolean yaExiste = false;
-        String tipo = "";
-        String obtenerNombre = "";
-        ar.cargarArchivo();
-        ad.cargarArchivo();
-        
-        for (Administrador u : ar.getListaAdministradores()) {
-            if ((loginUser.getText().equals(u.getUsuario()) && loginPass.getText().equals(u.getContrasena())) && u instanceof Administrador) {
-                yaExiste = true;
-                tipo = "Registro";
-            }
-        }
-        
-        for(Docente u: ad.getListaDocentes())
-        {
-            if ((loginUser.getText().equals(u.getUsuario()) && loginPass.getText().equals(u.getContrasena())) && u instanceof Docente) {
-                yaExiste = true;
-                tipo = "Docente";
-                obtenerNombre = u.getNombre();
-            }
-        }
-
-        if (yaExiste && tipo.equals("Registro")) {
-            abreMenu();
-            vaciar();
-            tipoTxt.setText("Administrador");
-            butt_docentes.setEnabled(true);
-            butt_alumnos.setEnabled(true);
-            butt_clases.setEnabled(true);
-        } 
-        if(yaExiste && tipo.equals("Docente"))
-        {
-            abreMenu();
-            vaciar();
-            tipoTxt.setText("Docente");
-            //butt_docentes.setVisible(false);
-            //butt_alumnos.setVisible(false);
-            //butt_clases.setVisible(false);
-        }
-        else {
-            JOptionPane.showMessageDialog(this, "Informacion inconrrecta!");
-            vaciar();
-        }
-    }//GEN-LAST:event_jButton1MouseClicked
-
-    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        // TODO add your handling code here:
-        butt_docentes.setEnabled(false);
-        butt_alumnos.setEnabled(false);
-        butt_clases.setEnabled(false);
-        jd_menu.dispose();
-        this.setVisible(true);
-        vaciar();
-    }//GEN-LAST:event_jButton6MouseClicked
 
     private void nombreTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreTxtActionPerformed
         // TODO add your handling code here:
@@ -836,6 +823,35 @@ public class Principal extends javax.swing.JFrame {
 
     private void butt_actualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butt_actualizarMouseClicked
         // TODO add your handling code here:
+        ad.cargarArchivo();
+        int index = -1;
+        index = listaDocentesMod.getSelectedRow();
+        try {
+            ad.getListaDocentes().get(index).setNombre(nombreTxt1.getText());
+            ad.getListaDocentes().get(index).setApellido(apellidoTxt1.getText());
+            ad.getListaDocentes().get(index).setUsuario(usuarioTxt1.getText());
+            ad.getListaDocentes().get(index).setContrasena(contrasenaTxt1.getText());
+            ad.getListaDocentes().get(index).setNumeroRegistro(Integer.parseInt(registroTxt1.getText()));
+            ad.getListaDocentes().get(index).setTituloUniversitario(tituloUniTxt1.getText());
+            ad.getListaDocentes().get(index).setTituloPostgrado(tituloPostTxt1.getText());
+            ad.getListaDocentes().get(index).setVecesImpartidas(Integer.parseInt(vecesImpartidadTxt1.getText()));
+            ad.getListaDocentes().get(index).setFacultad(cb_facultad.getSelectedItem().toString());
+            ad.escribirArchivo();
+            JOptionPane.showMessageDialog(this, "Se actualizaron los datos exitosamente!");
+            nombreTxt1.setText("");
+            apellidoTxt1.setText("");
+            usuarioTxt1.setText("");
+            contrasenaTxt1.setText("");
+            registroTxt1.setText("");
+            tituloUniTxt1.setText("");
+            tituloPostTxt1.setText("");
+            vecesImpartidadTxt1.setText("");
+            cb_facultad.setSelectedIndex(0);
+            index = -1;
+            butt_actualizar.setEnabled(false);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al actualizar los datos!");
+        }
     }//GEN-LAST:event_butt_actualizarMouseClicked
 
     private void butt_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_actualizarActionPerformed
@@ -856,7 +872,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void listaDocentesModMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDocentesModMouseClicked
         // TODO add your handling code here:
-        ar.cargarArchivo();
+        ad.cargarArchivo();
         if (listaDocentesMod.getSelectedRow() >= 0) {
             butt_actualizar.setEnabled(true);
             DefaultTableModel modelo = (DefaultTableModel) listaDocentesMod.getModel();
@@ -881,6 +897,92 @@ public class Principal extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_listaDocentesModMouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        ad.cargarArchivo();
+        listaDocentesDel.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "Apellido", "Usuario", "Contraseña", "Numero de Registro", "Titulo Universitario", "Titulo Postgrado","Veces Impartida","Facultad"}));
+        DefaultTableModel datos = (DefaultTableModel) listaDocentesDel.getModel();
+        for (Docente t : ad.getListaDocentes()) {
+            Object tabla[] = {t.getNombre(), t.getApellido(), t.getUsuario(), t.getContrasena(), t.getNumeroRegistro(), t.getTituloUniversitario(), t.getTituloPostgrado(), t.getVecesImpartidas(),t.getFacultad()};
+            datos.addRow(tabla);
+
+        }
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void listaDocentesDelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDocentesDelMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_listaDocentesDelMouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        ad.cargarArchivo();
+        int index = -1;
+        try {
+            index = listaDocentesDel.getSelectedRow();
+            ad.getListaDocentes().remove(index);
+            ad.escribirArchivo();
+            JOptionPane.showMessageDialog(this, "Eliminado exitosamente!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al tratar de eliminar!");
+        }
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        butt_docentes.setEnabled(false);
+        butt_alumnos.setEnabled(false);
+        butt_clases.setEnabled(false);
+        jd_menu.dispose();
+        this.setVisible(true);
+        vaciar();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        String obtenerNombre = "";
+        boolean existe = false;
+        String tipo = "";
+
+        ad.cargarArchivo();
+        ar.cargarArchivo();
+
+        for (Docente u : ad.getListaDocentes()) {
+            if ((loginUser.getText().equals(u.getUsuario()) && loginPass.getText().equals(u.getContrasena())) && u instanceof Docente) {
+                existe = true;
+                tipo = "Docente";
+                obtenerNombre = u.getNombre();
+                butt_docentes.setVisible(false);
+                butt_alumnos.setVisible(false);
+                butt_clases.setVisible(false);
+            }
+        }
+
+        for (Administrador u : ar.getListaAdministradores()) {
+            if ((loginUser.getText().equals(u.getUsuario()) && loginPass.getText().equals(u.getContrasena())) && u instanceof Administrador) {
+                existe = true;
+                tipo = "Registro";
+                butt_docentes.setEnabled(true);
+                butt_alumnos.setEnabled(true);
+                butt_clases.setEnabled(true);
+            }
+        }
+
+        if (existe && tipo.contains("Alumno")) {
+            abreMenu();
+        }
+        if (existe && tipo.contains("Registro")) {
+            tipoTxt.setText("Administrador");
+            abreMenu();
+        } else if (existe && tipo.contains("Docente")) {
+            tipoTxt.setText("Docente");
+            abreMenu();
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuario incorrecto!");
+            vaciar();
+        }
+    }//GEN-LAST:event_jButton5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -953,9 +1055,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_facultad1;
     private javax.swing.JTextField contrasenaTxt;
     private javax.swing.JTextField contrasenaTxt1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -983,8 +1086,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -995,10 +1098,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JDialog jd_docentes;
     private javax.swing.JDialog jd_menu;
     private javax.swing.JTable listaDocentes;
+    private javax.swing.JTable listaDocentesDel;
     private javax.swing.JTable listaDocentesMod;
     private javax.swing.JPasswordField loginPass;
     private javax.swing.JTextField loginUser;
