@@ -9,23 +9,24 @@ package lab6p2_josuedejesus;
  *
  * @author josue
  */
-public class Alumno extends Persona{
+public class Alumno extends Persona {
+
     private int edad;
     private int id;
     private String carrera;
-    private int snoCarerra;
+    private int anoCarerra;
     private Double promedio;
 
     public Alumno() {
         super();
     }
 
-    public Alumno(int edad, int id, String carrera, int snoCarerra, Double promedio, String nombre, String apellido, String usuario, String contrasena, int numeroRegistro, String facultad) {
+    public Alumno(String nombre, String apellido, String usuario, String contrasena, int edad, int numeroRegistro, int id, String carrera, int anoCarerra, Double promedio, String facultad) {
         super(nombre, apellido, usuario, contrasena, numeroRegistro, facultad);
         this.edad = edad;
         this.id = id;
         this.carrera = carrera;
-        this.snoCarerra = snoCarerra;
+        this.anoCarerra = anoCarerra;
         this.promedio = promedio;
     }
 
@@ -53,12 +54,12 @@ public class Alumno extends Persona{
         this.carrera = carrera;
     }
 
-    public int getSnoCarerra() {
-        return snoCarerra;
+    public int getAnoCarerra() {
+        return anoCarerra;
     }
 
-    public void setSnoCarerra(int snoCarerra) {
-        this.snoCarerra = snoCarerra;
+    public void setAnoCarerra(int anoCarerra) {
+        this.anoCarerra = anoCarerra;
     }
 
     public Double getPromedio() {
@@ -71,6 +72,6 @@ public class Alumno extends Persona{
 
     @Override
     public String toString() {
-        return "Alumno{" + "edad=" + edad + ", id=" + id + ", carrera=" + carrera + ", snoCarerra=" + snoCarerra + ", promedio=" + promedio + '}';
+        return "Alumno{" + "edad=" + edad + ", id=" + id + ", carrera=" + carrera + ", snoCarerra=" + anoCarerra + ", promedio=" + promedio + '}';
     }
 }
