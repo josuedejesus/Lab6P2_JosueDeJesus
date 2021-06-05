@@ -40,6 +40,9 @@ public class Principal extends javax.swing.JFrame {
         butt_docentes = new javax.swing.JMenuItem();
         butt_alumnos = new javax.swing.JMenuItem();
         butt_clases = new javax.swing.JMenuItem();
+        butt_proyectos = new javax.swing.JMenuItem();
+        butt_matricular = new javax.swing.JMenuItem();
+        butt_clase = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jd_docentes = new javax.swing.JDialog();
@@ -163,7 +166,6 @@ public class Principal extends javax.swing.JFrame {
         cb_facultad5 = new javax.swing.JComboBox<>();
         butt_guardar4 = new javax.swing.JButton();
         jLabel69 = new javax.swing.JLabel();
-        butt_cancelar4 = new javax.swing.JButton();
         edadTxt3 = new javax.swing.JTextField();
         jLabel70 = new javax.swing.JLabel();
         cb_carrera3 = new javax.swing.JComboBox<>();
@@ -175,6 +177,7 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         listaAlumnosDel = new javax.swing.JTable();
         jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         loginUser = new javax.swing.JTextField();
@@ -203,6 +206,15 @@ public class Principal extends javax.swing.JFrame {
 
         butt_clases.setText("Clases");
         jMenu1.add(butt_clases);
+
+        butt_proyectos.setText("Proyectos");
+        jMenu1.add(butt_proyectos);
+
+        butt_matricular.setText("Matricular");
+        jMenu1.add(butt_matricular);
+
+        butt_clase.setText("Clases");
+        jMenu1.add(butt_clase);
 
         jMenuItem1.setText("Cerrar Sesion");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -1096,18 +1108,6 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel69.setText("Facultad");
 
-        butt_cancelar4.setText("Cancelar");
-        butt_cancelar4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                butt_cancelar4MouseClicked(evt);
-            }
-        });
-        butt_cancelar4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butt_cancelar4ActionPerformed(evt);
-            }
-        });
-
         jLabel70.setText("Contrasena");
 
         jLabel71.setText("Promedio de graduacion");
@@ -1116,12 +1116,6 @@ public class Principal extends javax.swing.JFrame {
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(butt_guardar4)
-                .addGap(18, 18, 18)
-                .addComponent(butt_cancelar4)
-                .addGap(158, 158, 158))
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addGap(103, 103, 103)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1171,6 +1165,10 @@ public class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cb_facultad5, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(99, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(butt_guardar4)
+                .addGap(211, 211, 211))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1219,11 +1217,9 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(promedioTxt3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel71))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(butt_guardar4)
-                    .addComponent(butt_cancelar4))
-                .addGap(20, 20, 20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(butt_guardar4)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jLabel72.setFont(new java.awt.Font("Dialog", 0, 25)); // NOI18N
@@ -1275,6 +1271,11 @@ public class Principal extends javax.swing.JFrame {
 
             }
         ));
+        listaAlumnosDel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaAlumnosDelMouseClicked(evt);
+            }
+        });
         jScrollPane9.setViewportView(listaAlumnosDel);
 
         jScrollPane8.setViewportView(jScrollPane9);
@@ -1286,6 +1287,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jButton9.setText("Eliminar");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
@@ -1293,11 +1301,15 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 1366, Short.MAX_VALUE)
+                    .addComponent(jScrollPane8)
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(jButton8)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(633, 633, 633)
+                .addComponent(jButton9)
+                .addContainerGap(687, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1306,7 +1318,9 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton8)
-                .addContainerGap(509, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton9)
+                .addContainerGap(466, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Eliminar", jPanel11);
@@ -1615,6 +1629,7 @@ public class Principal extends javax.swing.JFrame {
 
         ad.cargarArchivo();
         ar.cargarArchivo();
+        aa.cargarArchivo();
 
         for (Docente u : ad.getListaDocentes()) {
             if ((loginUser.getText().equals(u.getUsuario()) && loginPass.getText().equals(u.getContrasena())) && u instanceof Docente) {
@@ -1624,6 +1639,9 @@ public class Principal extends javax.swing.JFrame {
                 butt_docentes.setVisible(false);
                 butt_alumnos.setVisible(false);
                 butt_clases.setVisible(false);
+                butt_proyectos.setVisible(true);
+                butt_clase.setVisible(false);
+                butt_matricular.setVisible(false);
             }
         }
 
@@ -1634,16 +1652,33 @@ public class Principal extends javax.swing.JFrame {
                 butt_docentes.setEnabled(true);
                 butt_alumnos.setEnabled(true);
                 butt_clases.setEnabled(true);
+                butt_proyectos.setVisible(false);
+                butt_clase.setVisible(false);
+                butt_matricular.setVisible(false);
+            }
+        }
+        
+        for (Alumno u : aa.getListaAlumnos()) {
+            if ((loginUser.getText().equals(u.getUsuario()) && loginPass.getText().equals(u.getContrasena())) && u instanceof Alumno) {
+                existe = true;
+                tipo = "Alumno";
+                butt_docentes.setVisible(false);
+                butt_alumnos.setVisible(false);
+                butt_clases.setVisible(false);
+                butt_proyectos.setVisible(false);
             }
         }
 
         if (existe && tipo.contains("Alumno")) {
+            tipoTxt.setText("Alumno");
             abreMenu();
         }
-        if (existe && tipo.contains("Registro")) {
+        else if (existe && tipo.contains("Registro")) {
             tipoTxt.setText("Administrador");
             abreMenu();
-        } else if (existe && tipo.contains("Docente")) {
+        }
+        
+        else if (existe && tipo.contains("Docente")) {
             tipoTxt.setText("Docente");
             abreMenu();
         } else {
@@ -1694,6 +1729,18 @@ public class Principal extends javax.swing.JFrame {
                 aa.escribirArchivo();
 
                 JOptionPane.showMessageDialog(this, "Guardado exitosamente!");
+
+                nombreTxt2.setText("");
+                apellidoTxt2.setText("");
+                usuarioTxt2.setText("");
+                contrasenaTxt2.setText("");
+                registroTxt2.setText("");
+                edadTxt.setText("");
+                idTxt.setText("");
+                anoTxt.setText("");
+                promedioTxt.setText("");
+                cb_facultad2.setSelectedIndex(0);
+                cb_carrera.setSelectedItem("");
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Error al guardar la informacion!");
@@ -1793,7 +1840,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void listaAlumnosModMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaAlumnosModMouseClicked
         // TODO add your handling code here:
-        ad.cargarArchivo();
+        aa.cargarArchivo();
         if (listaAlumnosMod.getSelectedRow() >= 0) {
             butt_guardar4.setEnabled(true);
             DefaultTableModel modelo = (DefaultTableModel) listaAlumnosMod.getModel();
@@ -1860,19 +1907,63 @@ public class Principal extends javax.swing.JFrame {
 
     private void butt_guardar4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butt_guardar4MouseClicked
         // TODO add your handling code here:
+        aa.cargarArchivo();
+        int index = -1;
+        index = listaAlumnosMod.getSelectedRow();
+        try {
+            aa.getListaAlumnos().get(index).setNombre(nombreTxt5.getText());
+            aa.getListaAlumnos().get(index).setApellido(apellidoTxt5.getText());
+            aa.getListaAlumnos().get(index).setUsuario(usuarioTxt5.getText());
+            aa.getListaAlumnos().get(index).setContrasena(contrasenaTxt5.getText());
+            aa.getListaAlumnos().get(index).setNumeroRegistro(Integer.parseInt(registroTxt5.getText()));
+            aa.getListaAlumnos().get(index).setEdad(Integer.parseInt(edadTxt3.getText()));
+            aa.getListaAlumnos().get(index).setId(Integer.parseInt(idTxt3.getText()));
+            aa.getListaAlumnos().get(index).setCarrera(cb_carrera.getSelectedItem().toString());
+            aa.getListaAlumnos().get(index).setAnoCarerra(Integer.parseInt(anoTxt3.getText()));
+            aa.getListaAlumnos().get(index).setPromedio(Double.parseDouble(promedioTxt3.getText()));
+            aa.getListaAlumnos().get(index).setFacultad(cb_facultad5.getSelectedItem().toString());
+            aa.escribirArchivo();
+            JOptionPane.showMessageDialog(this, "Se actualizaron los datos exitosamente!");
+            nombreTxt5.setText("");
+            apellidoTxt5.setText("");
+            usuarioTxt5.setText("");
+            contrasenaTxt5.setText("");
+            registroTxt5.setText("");
+            edadTxt3.setText("");
+            idTxt3.setText("");
+            anoTxt3.setText("");
+            promedioTxt3.setText("");
+            cb_facultad5.setSelectedIndex(0);
+            cb_carrera3.setSelectedItem("");
+            index = -1;
+            butt_actualizar.setEnabled(false);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al actualizar los datos!");
+        }
     }//GEN-LAST:event_butt_guardar4MouseClicked
 
     private void butt_guardar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_guardar4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_butt_guardar4ActionPerformed
 
-    private void butt_cancelar4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butt_cancelar4MouseClicked
+    private void listaAlumnosDelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaAlumnosDelMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_butt_cancelar4MouseClicked
+        
+    }//GEN-LAST:event_listaAlumnosDelMouseClicked
 
-    private void butt_cancelar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_cancelar4ActionPerformed
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_butt_cancelar4ActionPerformed
+        aa.cargarArchivo();
+        int index = -1;
+        try {
+            index = listaAlumnosDel.getSelectedRow();
+            aa.getListaAlumnos().remove(index);
+            aa.escribirArchivo();
+            JOptionPane.showMessageDialog(this, "Eliminado exitosamente!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al tratar de eliminar!");
+        }
+    }//GEN-LAST:event_jButton9MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1957,7 +2048,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton butt_cancelar1;
     private javax.swing.JButton butt_cancelar2;
     private javax.swing.JButton butt_cancelar3;
-    private javax.swing.JButton butt_cancelar4;
+    private javax.swing.JMenuItem butt_clase;
     private javax.swing.JMenuItem butt_clases;
     private javax.swing.JMenuItem butt_docentes;
     private javax.swing.JButton butt_guardar;
@@ -1965,6 +2056,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton butt_guardar2;
     private javax.swing.JButton butt_guardar3;
     private javax.swing.JButton butt_guardar4;
+    private javax.swing.JMenuItem butt_matricular;
+    private javax.swing.JMenuItem butt_proyectos;
     private javax.swing.JComboBox<String> cb_carrera;
     private javax.swing.JComboBox<String> cb_carrera1;
     private javax.swing.JComboBox<String> cb_carrera2;
@@ -1997,6 +2090,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

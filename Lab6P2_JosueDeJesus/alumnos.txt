@@ -1,1 +1,1 @@
-josue;de jesus;josuedejesus;1234;22;729801001;1001;Medicina;5;89.0;Salud;
+Marvin;Serrano;merwin;1234;20;1002;1515;Comunicacion;2;89.0;Licenciatura;
